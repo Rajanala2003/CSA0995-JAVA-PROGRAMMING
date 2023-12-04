@@ -1,0 +1,65 @@
+
+class Vehicle {
+
+    public void drive() {
+        System.out.println("Driving a vehicle");
+    }
+}
+
+class Car extends Vehicle {
+  
+    @Override
+    public void drive() {
+        System.out.println("Repairing a car");
+    }
+}
+
+
+class Shape {
+
+    public double getArea() {
+        System.out.println("Calculating area of a generic shape");
+        return 0.0;
+    }
+}
+
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+ 
+    public double getArea() {
+        System.out.println("Calculating area of a rectangle");
+        return length * width;
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+   
+        Vehicle genericVehicle = new Vehicle();
+
+        System.out.println("Vehicle action:");
+        genericVehicle.drive();
+
+   
+        Car myCar = new Car();
+
+  
+        System.out.println("\nCar action:");
+        myCar.drive();
+
+
+        Rectangle myRectangle = new Rectangle(5.0, 8.0);
+
+        System.out.println("\nRectangle area:");
+        double area = myRectangle.getArea();
+        System.out.println("Area: " + area);
+    }
+}
